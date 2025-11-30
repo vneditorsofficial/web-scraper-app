@@ -1,0 +1,117 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║         🚀 WEB SCRAPER - QUICK START GUIDE 🚀                ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 WHAT YOU NEED:
+═════════════════════════════════════════════════════════════
+✅ Node.js installed (download from https://nodejs.org/)
+✅ This web-scraper-app folder
+✅ Internet connection
+
+🚀 3-STEP SETUP (5 minutes):
+═════════════════════════════════════════════════════════════
+
+STEP 1: Install Dependencies
+────────────────────────────────────────────────────────────
+Open terminal/command prompt in this folder and run:
+
+    npm install
+
+Wait 2-5 minutes for installation to complete.
+
+
+STEP 2: Start the Server
+────────────────────────────────────────────────────────────
+Run this command:
+
+    npm start
+
+You should see:
+"🚀 WEB SCRAPER APPLICATION STARTED!"
+
+
+STEP 3: Open in Browser
+────────────────────────────────────────────────────────────
+Open your web browser and go to:
+
+    http://localhost:3000
+
+That's it! You're ready to scrape! 🎉
+
+
+💡 HOW TO USE:
+═════════════════════════════════════════════════════════════
+
+1. Paste a URL (e.g., https://vnvideoseditor.com)
+2. Click "🚀 Start Scraping"
+3. Watch the progress and logs
+4. Download screenshots and data files
+
+Easy! 😊
+
+
+📁 WHERE TO FIND RESULTS:
+═════════════════════════════════════════════════════════════
+
+After scraping, results are saved in:
+
+    screenshots/     ← All screenshots here
+    output/          ← JSON, HTML, TXT files here
+
+
+⚙️ CUSTOMIZE:
+═════════════════════════════════════════════════════════════
+
+On the web page:
+- ☑ Toggle "Click Images" on/off
+- ☑ Toggle "Visit Contact Page" on/off
+- 🔧 Click "Advanced Settings" for more options
+
+
+🐛 TROUBLESHOOTING:
+═════════════════════════════════════════════════════════════
+
+Problem: "npm: command not found"
+→ Install Node.js from https://nodejs.org/
+
+Problem: "Port 3000 already in use"
+→ Close other applications using port 3000
+→ Or change PORT in server.js
+
+Problem: "Cannot find module"
+→ Run: npm install
+
+Problem: Scraping fails
+→ Increase delays in Advanced Settings
+→ Check if URL is accessible
+
+
+📞 NEED MORE HELP?
+═════════════════════════════════════════════════════════════
+
+Read the full README.md file for:
+- Detailed documentation
+- API endpoints
+- Deployment guide
+- Development tips
+
+
+🎯 EXAMPLE URLS TO TRY:
+═════════════════════════════════════════════════════════════
+
+✅ https://vnvideoseditor.com
+✅ https://example.com
+✅ https://wikipedia.org
+✅ Any public website!
+
+
+🎉 ENJOY SCRAPING!
+═════════════════════════════════════════════════════════════
+
+Questions? Issues? Check README.md or the code comments!
+
+Happy Scraping! 🚀
+
+════════════════════════════════════════════════════════════

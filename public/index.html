@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#6366f1"/>
+                    <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Web Scraper</h1>
+            </div>
+            <p class="subtitle">Extract data from any website with powerful automation</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <div class="card" id="inputSection">
+                <h2>🌐 Enter Website URL</h2>
+                <div class="input-group">
+                    <input 
+                        type="url" 
+                        id="urlInput" 
+                        placeholder="https://example.com"
+                        class="url-input"
+                    >
+                </div>
+
+                <!-- Options -->
+                <div class="options">
+                    <h3>⚙️ Options</h3>
+                    <div class="option-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="clickImages" checked>
+                            <span>Click Images (Open in new tabs)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="visitContact" checked>
+                            <span>Visit Contact Page</span>
+                        </label>
+                    </div>
+
+                    <div class="advanced-options">
+                        <details>
+                            <summary>🔧 Advanced Settings</summary>
+                            <div class="option-group">
+                                <label>
+                                    Max Images to Click:
+                                    <input type="number" id="maxImages" value="5" min="1" max="20">
+                                </label>
+                                <label>
+                                    Page Load Delay (seconds):
+                                    <input type="number" id="pageLoadDelay" value="15" min="5" max="60">
+                                </label>
+                                <label>
+                                    Scroll Delay (seconds):
+                                    <input type="number" id="scrollDelay" value="10" min="5" max="30">
+                                </label>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <button id="startBtn" class="btn-primary">
+                    <span class="btn-icon">🚀</span>
+                    Start Scraping
+                </button>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="card" id="progressSection" style="display: none;">
+                <h2>📊 Scraping Progress</h2>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+
+                <div class="status-badge" id="statusBadge">
+                    <span class="status-icon">⏳</span>
+                    <span id="statusText">Starting...</span>
+                </div>
+
+                <!-- Live Logs -->
+                <div class="logs-container">
+                    <h3>📝 Live Logs</h3>
+                    <div class="logs" id="logsContainer">
+                        <div class="log-entry info">
+                            <span class="log-time">--:--:--</span>
+                            <span class="log-message">Waiting to start...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="card" id="resultsSection" style="display: none;">
+                <h2>✨ Results</h2>
+                
+                <div class="results-summary" id="resultsSummary"></div>
+
+                <!-- Screenshots Gallery -->
+                <div class="screenshots-section">
+                    <h3>📸 Screenshots</h3>
+                    <div class="screenshots-grid" id="screenshotsGrid"></div>
+                </div>
+
+                <!-- Download Files -->
+                <div class="files-section">
+                    <h3>📥 Download Files</h3>
+                    <div class="files-list" id="filesList"></div>
+                </div>
+
+                <button id="newScrapeBtn" class="btn-secondary">
+                    🔄 Start New Scrape
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with ❤️ using Puppeteer & Express</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: web-scraper-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
