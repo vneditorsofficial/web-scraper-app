@@ -51,11 +51,11 @@ app.post('/api/scrape', async (req, res) => {
     visitContact: options?.visitContact !== false,
     maxImages: options?.maxImages || 5,
     delays: {
-      pageLoad: options?.pageLoadDelay || 15000,
-      afterScroll: options?.afterScrollDelay || 10000,
-      beforeScreenshot: options?.beforeScreenshotDelay || 3000,
-      beforeClose: options?.beforeCloseDelay || 5000,
-      betweenActions: options?.betweenActionsDelay || 2000
+      pageLoad: options?.pageLoadDelay || 5000,
+      afterScroll: options?.afterScrollDelay || 3000,
+      beforeScreenshot: options?.beforeScreenshotDelay || 1000,
+      beforeClose: options?.beforeCloseDelay || 1000,
+      betweenActions: options?.betweenActionsDelay || 1000
     }
   };
   
@@ -137,6 +137,7 @@ async function runScraper(sessionId, config) {
     log('📱 Launching browser...');
     browser = await puppeteer.launch({
       headless: 'new',
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome-stable',
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -144,9 +145,19 @@ async function runScraper(sessionId, config) {
         '--disable-accelerated-2d-canvas',
         '--no-first-run',
         '--no-zygote',
-        '--single-process',
         '--disable-gpu',
-        '--disable-blink-features=AutomationControlled'
+        '--disable-blink-features=AutomationControlled',
+        '--disable-background-networking',
+        '--disable-default-apps',
+        '--disable-extensions',
+        '--disable-sync',
+        '--disable-translate',
+        '--hide-scrollbars',
+        '--metrics-recording-only',
+        '--mute-audio',
+        '--no-default-browser-check',
+        '--safebrowsing-disable-auto-update',
+        '--js-flags=--max-old-space-size=512'
       ]
     });
     
